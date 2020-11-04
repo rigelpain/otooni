@@ -59,12 +59,15 @@ let navSliderOptions = {
     };
 let navSlider = new Swiper(navSliderSelector, navSliderOptions);
 
-// mainSlider.on('slideChange', function () {
-//   console.log('現在のスライド番号： ' + (this.activeIndex));
-//   console.log("video-" + this.activeIndex);
-//   // document.getElementById("video-"+1).play();
 
-// });
+  mainSlider.on('slideChange', function () {
+  console.log('現在のスライド番号： ' + (this.activeIndex+1));
+  console.log("video-" + (this.activeIndex+1));
+  if(this.activeIndex<11){
+    document.getElementById("video-" + (this.activeIndex+1)).play();
+  }
+});
+
 
 // Matching sliders
 mainSlider.controller.control = navSlider;
